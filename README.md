@@ -57,10 +57,10 @@ for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
             <img src="/path/to/image1.jpg">
         ''',
         title='README',
-        dests=[email, 'cc@netsach.com'],
+        dests=[email, 'cc@netsach.org'],
         sender_name='Netsach',
-        sender_email='sender@netsach.com',
-        reply_to='contact@netsach.com',
+        sender_email='sender@netsach.org',
+        reply_to='contact@netsach.org',
         attachments=['/path/to/file.zip', '/path/to/image2.png'],
     )
 ```
@@ -87,9 +87,9 @@ for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
         ''',
         title='README',
         css='',  #: Here you can add a css
-        sender='Netsach <sender@netsach.com>',
-        reply_to='contact@netsach.com',
-        recipients=[email, 'cc@netsach.com'],
+        sender='Netsach <sender@netsach.org>',
+        reply_to='contact@netsach.org',
+        recipients=[email, 'cc@netsach.org'],
         attachments=['/path/to/file.zip', '/path/to/image2.png'],
         email_host=os.getenv('SMTP_HOST_NAME'),  #: smtp hostname
         email_port=os.getenv('SMTP_HOST_PORT'),  #: smtp host port

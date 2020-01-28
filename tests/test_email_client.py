@@ -34,8 +34,8 @@ class TestEmailClient(TestCase):
         context = {'name': 'John Doe'}
         html = '<h1>Hello {{name}}</h1><p>Welcome to Concrete Mailer</p>'
         title = 'Hello Email'
-        sender = 'test@netsach.com'
-        recipients = ['email1.netsach.com', 'email2.netsach.com']
+        sender = 'test@netsach.org'
+        recipients = ['email1.netsach.org', 'email2.netsach.org']
         email_sent = client.send(
             context,
             html,
@@ -56,8 +56,8 @@ class TestEmailClient(TestCase):
         context = {'name': 'John Doe'}
         html = '<h1>Hello {{name}}</h1><p>Welcome to Concrete Mailer</p>'
         title = 'Hello Email'
-        sender = 'test@netsach.com'
-        recipients = ['email1.netsach.com', 'email2.netsach.com']
+        sender = 'test@netsach.org'
+        recipients = ['email1.netsach.org', 'email2.netsach.org']
 
         email_sent = client.send(
             context,
