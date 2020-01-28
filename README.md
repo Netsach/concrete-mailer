@@ -1,2 +1,2 @@
 # concrete-mailer
-Python package for sending rich e-mails
+Python package for sending rich e-mails.
