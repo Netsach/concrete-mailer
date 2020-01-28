@@ -27,7 +27,7 @@ To do so, please follow our contributing guideline:
 -  Open a pull request to the original repository
 -  Reference the issue you handled in your pull request.  
 :no_entry_sign: **PLEASE DO NOT CLOSE THE ISSUE BY YOURSELF**
--  Assign the pull request to one of the repository maintainers
+-  Assign the pull request to one of the repository maintainers.  
 :no_entry_sign: **IF YOU ARE ONE OF THE MAINTAINERS, PLEASE DO NOT ACCEPT YOUR OWN PULL REQUESTS UNLESS YOUR CHANGES WERE REVIEWED AND VALIDATED BY AT LEAST ANOTHER MEMBER OF THE PROJECT**
 -  The pull request will be reviewed and discussed before any merge.
 
