@@ -1,0 +1,23 @@
+[tool.black]
+skip-string-normalization = true
+line-length = 79
+include = '.*/concrete_mailer/.*\.py$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | env            # root of the project
+    | build
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
