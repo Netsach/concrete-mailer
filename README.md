@@ -3,7 +3,7 @@
 ## Code Quality
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Netsach/concrete-mailer/Check%20Bandit?label=security)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Netsach/concrete-mailer/Check%Black?label=black)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Netsach/concrete-mailer/Check%20Black?label=black)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Netsach/concrete-mailer/Lint?label=lint)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Netsach/concrete-mailer/Tests?label=tests)
 ![Codecov](https://img.shields.io/codecov/c/github/Netsach/concrete-mailer?logo=coedcov)
