@@ -86,7 +86,7 @@ for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
             <img src="/path/to/image1.jpg">
         ''',
         title='README',
-        css='',  #: Here you can add a css
+        css='',  #: extra css
         sender='Netsach <sender@netsach.org>',
         reply_to='contact@netsach.org',
         recipients=[email, 'cc@netsach.org'],
