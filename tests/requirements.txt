@@ -1,7 +1,5 @@
 mock
-ipython>=5,<6
 pytest-cov
-pep8
 pylint
 pytest
 bandit
