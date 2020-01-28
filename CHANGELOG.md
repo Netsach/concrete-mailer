@@ -4,7 +4,7 @@
 
 ### Added
 
-- first public release
+- nothing added
 
 ### Changed
 
@@ -13,3 +13,9 @@
 ### Removed
 
 - nothing removed
+
+## [2.13.0]
+
+### Added
+
+- first public release
