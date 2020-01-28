@@ -6,3 +6,4 @@ pylint
 pytest
 bandit
 black
+codecov
