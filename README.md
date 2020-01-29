@@ -13,7 +13,7 @@
 
 ## Description
 
-:email: `concrete-mailer` is a python package for sending rich e-mails.
+`concrete-mailer` is a python package for sending rich e-mails.
 
 - It automatically embeds the linked image in email inline attachments.
 - It avoids emails to end up in SPAM (applying best practices, with no guarantee)
@@ -21,7 +21,7 @@
 - It allows sending e-mails with attachements
 - It inlines CSS (no header in HTML e-mails)
 
-:warning: It requires an SMTP server.
+⚠ **warning** It requires an SMTP server.
 
 ## Setup the environment
 

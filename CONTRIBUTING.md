@@ -38,7 +38,7 @@ To do so, please follow our contributing guideline:
 ```shell
 python3 -m venv env
 source env/bin/activate
-pip install ".[security,lint,lint_py3]"
+pip install ".[security,quality]"
 ```
 
 ### Ensure black
