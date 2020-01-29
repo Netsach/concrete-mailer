@@ -10,6 +10,8 @@
 ![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)
 ![Python](https://img.shields.io/badge/python-2.7-3473A7?logo=python&logoColor=FED646)
 ![Python](https://img.shields.io/badge/python-3.6-3473A7?logo=python&logoColor=FED646)
+![Python](https://img.shields.io/badge/python-3.7-3473A7?logo=python&logoColor=FED646)
+![Python](https://img.shields.io/badge/python-3.8-3473A7?logo=python&logoColor=FED646)
 
 ## Description
 
