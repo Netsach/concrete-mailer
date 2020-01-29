@@ -14,6 +14,12 @@
 
 - nothing removed
 
+## [2.14.0]
+
+### Changed
+
+- changed project configuration and documentation
+
 ## [2.13.0]
 
 ### Added

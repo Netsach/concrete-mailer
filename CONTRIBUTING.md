@@ -78,3 +78,17 @@ pylint -E concrete_mailer
 ```shell
 bandit concrete_mailer -r --exclude tests
 ```
+
+### Release a new version
+
+- change version within `concrete_mailer/__init__.py` file.
+- Update CHANGELOG.md to fix version
+- commit yout changes
+- tag the new version
+    - `git tag -a x.x.x -m 'x.x.x'`
+- install setuptools and whell
+    - `pip install -U setuptools wheel twine`
+- create dist
+    - `python3 setup.py sdist bdist_wheel`
+- upload new version
+    - `python3 -m twine upload dist/*`
