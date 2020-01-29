@@ -50,13 +50,13 @@ pip install ".[security,lint,lint_py3]"
 #### format all files:
 
 ```shell
-black --config pyproject.toml .
+black --line-length=79 --skip-string-normalization concrete_mailer
 ```
 
 #### check if all files ar well formatted:
 
 ```shell
-black --check --config pyproject.toml .
+black --check --line-length=79 --skip-string-normalization concrete_mailer
 ```
 
 ### Ensure lint
