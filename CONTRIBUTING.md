@@ -1,6 +1,6 @@
 # How to contribute
 
-We encourage contributing to this project and we thank you for taking the time to contribute.  
+We encourage contributing to this project and we thank you for taking the time to contribute.
 To do so, please follow our contributing guideline:
 
 ## 1- Submit an issue
@@ -25,9 +25,9 @@ To do so, please follow our contributing guideline:
 ## 3- Submit changes
 -  Push your changes to your branch on your forked repository
 -  Open a pull request to the original repository
--  Reference the issue you handled in your pull request.  
+-  Reference the issue you handled in your pull request.
 :no_entry_sign: **PLEASE DO NOT CLOSE THE ISSUE BY YOURSELF**
--  Assign the pull request to one of the repository maintainers.  
+-  Assign the pull request to one of the repository maintainers.
 :no_entry_sign: **IF YOU ARE ONE OF THE MAINTAINERS, PLEASE DO NOT ACCEPT YOUR OWN PULL REQUESTS UNLESS YOUR CHANGES WERE REVIEWED AND VALIDATED BY AT LEAST ANOTHER MEMBER OF THE PROJECT**
 -  The pull request will be reviewed and discussed before any merge.
 
@@ -38,8 +38,7 @@ To do so, please follow our contributing guideline:
 ```shell
 python3 -m venv env
 source env/bin/activate
-pip install concrete-mailer
-pip install -r tests/requirements.txt
+pip install -e ".[security,quality]"
 ```
 
 ### Ensure black
@@ -51,13 +50,13 @@ pip install -r tests/requirements.txt
 #### format all files:
 
 ```shell
-black --config pyproject.toml .
+black --line-length=79 --skip-string-normalization concrete_mailer
 ```
 
 #### check if all files ar well formatted:
 
 ```shell
-black --check --config pyproject.toml .
+black --check --line-length=79 --skip-string-normalization concrete_mailer
 ```
 
 ### Ensure lint

@@ -1,7 +1,0 @@
-mock
-pytest-cov
-pylint
-pytest
-bandit
-black
-codecov

@@ -7,8 +7,7 @@
 ```shell
 python3 -m venv env
 source env/bin/activate
-pip install concrete-mailer
-pip install -r tests/requirements.txt
+pip install -e ".[tests]"
 ```
 
 ### Run the tests
@@ -16,7 +15,7 @@ pip install -r tests/requirements.txt
 Invoke Pytest with the following args:
 
 ```shell
-pytest -s concrete_mailer --pyargs -q tests --cov --cov-report html --cov-report term --cov-config tests/.coveragerc
+pytest -s concrete_mailer --pyargs -q tests --cov --cov-report html --cov-report term
 ```
 
 You can decide to deactivate coverage
