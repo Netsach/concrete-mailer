@@ -7,7 +7,7 @@
 ```shell
 python3 -m venv env
 source env/bin/activate
-pip install concrete-mailer
+pip install .
 pip install -r tests/requirements.txt
 ```
 

@@ -30,5 +30,5 @@ include =
 
 
 [html]
-title = concrete_mailer - Code coverage
+title = concrete-mailer - Code coverage
 directory = ./tests/coverage/
