@@ -15,7 +15,7 @@ pip install -e ".[tests]"
 Invoke Pytest with the following args:
 
 ```shell
-pytest -s concrete_mailer --pyargs -q tests --cov --cov-report html --cov-report term --cov-config tests/.coveragerc
+pytest -s concrete_mailer --pyargs -q tests --cov --cov-report html --cov-report term
 ```
 
 You can decide to deactivate coverage

@@ -23,7 +23,7 @@ jobs:
         pip install -e ".[tests]"
     - name: Test with pytest
       run: |
-        pytest -s concrete_mailer --pyargs -q tests --cov --cov-report html --cov-report term --cov-config tests/.coveragerc
+        pytest -s concrete_mailer --pyargs -q tests --cov --cov-report html --cov-report term
     - name: Tests coverage with CodeCov
       run: |
         codecov
