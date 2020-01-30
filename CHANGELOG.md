@@ -12,7 +12,7 @@
 
 ### Removed
 
-- nothing removed
+- removed unnecessary class EmailToConsole, since standart `smtpd` python module make the job.
 
 ## [2.14.0]
 

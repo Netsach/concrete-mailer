@@ -108,8 +108,28 @@ for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
 
 ### Debug
 
-An additionnal `debug` kwargs (`False` by default) can be added with the following behaviour:
+Python standart package includes a `smtpd` module.
 
--  if `debug` is `False` (*default*), then the client will try to establish an smtp connection and send the email with the given options.
--  if `debug` is `True`, the email body will be displayed in console instead of being sent to destinations. No stmp connection will be established (dry-run)
+According to the [official documentation](https://docs.python.org/3/library/smtpd.html)
 
+> This module offers several classes to implement SMTP (email) servers.
+
+One of thoses classes is `DebuggingServer`.
+
+> Create a new debugging server. Arguments are as per SMTPServer. Messages will be discarded, and printed on stdout.
+
+If you want to test your emails, open a new console and invoke the following command:
+
+```bash
+python3 -m smtpd -n -c DebuggingServer localhost:1025
+```
+
+and configure your environment :
+
+```bash
+SMTP_HOST_NAME='localhost'
+SMTP_HOST_PORT='1025'
+SMTP_HOST_USER=''
+SMTP_HOST_PASSWORD=''
+```
+The email body will be displayed in console instead of being sent to destinations. Only local stmp connection will be established (dry-run)

@@ -2,6 +2,7 @@
 from mock import patch
 from unittest import TestCase
 from concrete_mailer.preparers import prepare_email
+from concrete_mailer.utils import EmailToSend, get_connection
 from smtplib import SMTPException
 
 
@@ -49,22 +50,22 @@ class TestSendEmail(TestCase):
         with self.assertRaises(SMTPException):
             prepare_email(context, '', html, title, sender, recipients)
 
-    def test_email_to_console(self):
-        """
-        This test uses EmailToConsole.
-        It should show the email message in the console
-        """
-        context = {'name': 'John Doe'}
-        html = '<h1>Hello {{name}}</h1><p>Welcome to Concrete Mailer</p>'
-        title = 'Hello Email'
-        sender = 'test@netsach.org'
-        recipients = ['email1.netsach.org', 'email2.netsach.org']
-        reply_to = 'support@netsach.org'
-        patch(
-            'concrete_mailer.preparers.get_connection', new=FakeSmtpConnection
-        ).start()
-        patch('concrete_mailer.utils.sys.stdout').start()
-        email = prepare_email(
-            context, '', html, title, sender, recipients, reply_to, debug=True
+    def test_failure_instanciate_mail(self):
+        email = EmailToSend(
+            connection=None,
+            email=None
         )
-        self.assertTrue(email.send())
+        self.assertFalse(email.send())
+
+    def test_get_connection(self):
+        patch(
+            'concrete_mailer.utils.SMTP',
+        ).start()
+        self.assertIsNotNone(
+            get_connection(
+                host=None,
+                port=None,
+                sender_email=None,
+                sender_password=None
+            )
+        )

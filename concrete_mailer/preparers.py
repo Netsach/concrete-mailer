@@ -15,7 +15,7 @@ import uuid
 import requests
 from smtplib import SMTPException
 from jinja2.sandbox import SandboxedEnvironment
-from concrete_mailer.utils import get_connection, EmailToSend, EmailToConsole
+from concrete_mailer.utils import get_connection, EmailToSend
 
 if sys.version_info.major == 3:  # python3
     unicode_type = str
@@ -126,7 +126,6 @@ def prepare_email(
     equivalences_key_path=None,
     smtp_connection=None,
     attachments=None,
-    debug=False,
     email_host=None,
     email_port=None,
     email_host_user=None,
@@ -137,9 +136,7 @@ def prepare_email(
     if reply_to is None:
         reply_to = sender
 
-    EmailBackendClass = EmailToConsole if debug else EmailToSend
-
-    if smtp_connection is None and debug is False:
+    if smtp_connection is None:
         try:
             smtp_connection = get_connection(
                 host=email_host,
@@ -172,7 +169,7 @@ def prepare_email(
     email.attach(MIMEText(message, 'html'))
 
     if attachments is None:
-        return EmailBackendClass(
+        return EmailToSend(
             connection=smtp_connection, email=email, message=message
         )
     if isinstance(attachments, (list, tuple)) is False:
@@ -192,7 +189,7 @@ def prepare_email(
 
         email.attach(file)
 
-    return EmailBackendClass(
+    return EmailToSend(
         connection=smtp_connection,
         email=email,
         message=message,

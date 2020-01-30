@@ -23,7 +23,6 @@ class EmailSenderClient:
         self.email_host_password = kwargs.get(
             'email_host_password', os.environ.get('EMAIL_HOST_PASSWORD', '')
         )
-        self.debug = kwargs.get('debug', False)
 
     def send(
         self,
@@ -36,18 +35,16 @@ class EmailSenderClient:
         reply_to=None,
         attachments=None,
     ):
-        connection = None
-        if self.debug is False:
-            try:
-                connection = get_connection(
-                    host=self.email_host,
-                    port=self.email_port,
-                    sender_email=self.email_host_user,
-                    sender_password=self.email_host_password,
-                )
-            except SMTPException as e:
-                logger.info('Failed to establish connection: {}'.format(e))
-                return False
+        try:
+            connection = get_connection(
+                host=self.email_host,
+                port=self.email_port,
+                sender_email=self.email_host_user,
+                sender_password=self.email_host_password,
+            )
+        except SMTPException as e:
+            logger.info('Failed to establish connection: {}'.format(e))
+            return False
         email = prepare_email(
             context=context,
             css='',
@@ -60,7 +57,6 @@ class EmailSenderClient:
             reply_to=reply_to,
             smtp_connection=connection,
             attachments=attachments,
-            debug=self.debug,
         )
         try:
             return email.send()
