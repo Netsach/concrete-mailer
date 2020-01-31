@@ -110,7 +110,7 @@ for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
 
 ### Debug
 
-Python standart package includes a `smtpd` module.
+Python standard package includes a `smtpd` module.
 
 According to the [official documentation](https://docs.python.org/3/library/smtpd.html)
 
