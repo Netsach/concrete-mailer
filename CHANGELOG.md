@@ -4,7 +4,7 @@
 
 ### Added
 
-- nothing added
+- added parameter `use_tls`. It allows to activate or not the tls use within smtp connection. Default value is `True` for backward compatibility.
 
 ### Changed
 

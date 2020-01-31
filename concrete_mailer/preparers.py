@@ -130,6 +130,7 @@ def prepare_email(
     email_port=None,
     email_host_user=None,
     email_host_password=None,
+    use_tls=False,
 ):
     if equivalences_key_path is None:
         equivalences_key_path = {}
@@ -143,6 +144,7 @@ def prepare_email(
                 port=email_port,
                 sender_email=email_host_user,
                 sender_password=email_host_password,
+                use_tls=use_tls,
             )
         except SMTPException as e:
             logger.info('Failed to establish connection: {}'.format(e))

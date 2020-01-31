@@ -34,6 +34,7 @@ class EmailSenderClient:
         sender_email,
         reply_to=None,
         attachments=None,
+        use_tls=True,
     ):
         try:
             connection = get_connection(
@@ -41,6 +42,7 @@ class EmailSenderClient:
                 port=self.email_port,
                 sender_email=self.email_host_user,
                 sender_password=self.email_host_password,
+                use_tls=use_tls,
             )
         except SMTPException as e:
             logger.info('Failed to establish connection: {}'.format(e))

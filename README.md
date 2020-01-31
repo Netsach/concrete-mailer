@@ -48,6 +48,7 @@ client = EmailSenderClient(
     email_port=os.getenv('SMTP_HOST_PORT'),  #: smtp host port
     email_host_user=os.getenv('SMTP_HOST_USER'),  #: smtp host username
     email_host_password=os.getenv('SMTP_HOST_PASSWORD'),  #: smtp host password
+    use_tls=os.getenv('SMTP_USE_TLS', default=False),  #: smtp use tls
 )
 
 for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
@@ -97,6 +98,7 @@ for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
         email_port=os.getenv('SMTP_HOST_PORT'),  #: smtp host port
         email_host_user=os.getenv('SMTP_HOST_USER'),  #: smtp host username
         email_host_password=os.getenv('SMTP_HOST_PASSWORD'),  #: smtp host password
+        use_tls=os.getenv('SMTP_USE_TLS', default=False),  #: smtp use tls
     )
     email.send()
 ```
@@ -131,5 +133,6 @@ SMTP_HOST_NAME='localhost'
 SMTP_HOST_PORT='1025'
 SMTP_HOST_USER=''
 SMTP_HOST_PASSWORD=''
+SMTP_USE_TLS=False
 ```
 The email body will be displayed in console instead of being sent to destinations. Only local stmp connection will be established (dry-run)

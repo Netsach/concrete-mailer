@@ -2,9 +2,10 @@
 from smtplib import SMTP
 
 
-def get_connection(host, port, sender_email, sender_password):
+def get_connection(host, port, sender_email, sender_password, use_tls=True):
     connection = SMTP(host=host, port=port)
-    connection.starttls()
+    if use_tls:
+        connection.starttls()
     connection.login(sender_email, sender_password)
     return connection
 
