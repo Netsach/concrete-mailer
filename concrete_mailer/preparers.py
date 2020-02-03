@@ -142,8 +142,8 @@ def prepare_email(
             smtp_connection = get_connection(
                 host=email_host,
                 port=email_port,
-                sender_email=email_host_user,
-                sender_password=email_host_password,
+                user=email_host_user,
+                password=email_host_password,
                 use_tls=use_tls,
             )
         except SMTPException as e:

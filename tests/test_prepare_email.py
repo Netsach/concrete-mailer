@@ -65,7 +65,7 @@ class TestSendEmail(TestCase):
             get_connection(
                 host=None,
                 port=None,
-                sender_email=None,
-                sender_password=None
+                user=None,
+                password=None
             )
         )

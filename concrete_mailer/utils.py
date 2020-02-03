@@ -2,11 +2,13 @@
 from smtplib import SMTP
 
 
-def get_connection(host, port, sender_email, sender_password, use_tls=True):
+def get_connection(host, port, user, password, use_tls=True):
     connection = SMTP(host=host, port=port)
     if use_tls:
         connection.starttls()
-    connection.login(sender_email, sender_password)
+    # Ensure the SMTP server support the auth extension?
+    if connection.has_extn('auth'):
+        connection.login(user, password)
     return connection
 
 

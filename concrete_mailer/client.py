@@ -40,8 +40,8 @@ class EmailSenderClient:
             connection = get_connection(
                 host=self.email_host,
                 port=self.email_port,
-                sender_email=self.email_host_user,
-                sender_password=self.email_host_password,
+                user=self.email_host_user,
+                password=self.email_host_password,
                 use_tls=use_tls,
             )
         except SMTPException as e:
