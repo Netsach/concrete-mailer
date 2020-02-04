@@ -23,6 +23,9 @@ class EmailSenderClient:
         self.email_host_password = kwargs.get(
             'email_host_password', os.environ.get('EMAIL_HOST_PASSWORD', '')
         )
+        self.use_tls = kwargs.get(
+            'use_tls', os.environ.get('SMTP_USE_TLS') == '1'
+        )
 
     def send(
         self,
@@ -34,7 +37,6 @@ class EmailSenderClient:
         sender_email,
         reply_to=None,
         attachments=None,
-        use_tls=True,
     ):
         try:
             connection = get_connection(
@@ -42,7 +44,7 @@ class EmailSenderClient:
                 port=self.email_port,
                 user=self.email_host_user,
                 password=self.email_host_password,
-                use_tls=use_tls,
+                use_tls=self.use_tls,
             )
         except SMTPException as e:
             logger.info('Failed to establish connection: {}'.format(e))
