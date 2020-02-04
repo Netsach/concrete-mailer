@@ -4,6 +4,20 @@
 
 ### Added
 
+- nothing added
+
+### Changed
+
+- nothing changed
+
+### Removed
+
+- nothing removed
+
+## [2.15.0]
+
+### Added
+
 - added parameter `use_tls`. It allows to activate or not the tls use within smtp connection. Default value is `True` for backward compatibility.
 - added the check to ensure the SMTP server supports the auth extension before login
 
