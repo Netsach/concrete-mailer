@@ -10,6 +10,7 @@
 ### Changed
 
 - change function `get_connection` badly named `sender_email` parameter
+- change the sender while sending over SMTP
 
 ### Removed
 

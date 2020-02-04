@@ -75,7 +75,7 @@ for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
 
 ### 2- Email preparers (preparer.py)
 ```python
-from concrete_mailer.utils.preparers import prepare_email
+from concrete_mailer.preparers import prepare_email
 import os
 
 #:  Define the smtp connexion variables in:

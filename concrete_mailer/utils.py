@@ -21,7 +21,7 @@ class EmailToSend:
         if self.connection is None:
             return False
         self.connection.sendmail(
-            from_addr=self.connection.user,
+            from_addr=self.email['From'],
             to_addrs=self.email['To'],
             msg=self.email.as_string(),
         )
