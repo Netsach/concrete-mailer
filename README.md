@@ -48,6 +48,7 @@ client = EmailSenderClient(
     email_port=os.getenv('SMTP_HOST_PORT'),  #: smtp host port
     email_host_user=os.getenv('SMTP_HOST_USER'),  #: smtp host username
     email_host_password=os.getenv('SMTP_HOST_PASSWORD'),  #: smtp host password
+    use_tls=os.getenv('SMTP_USE_TLS') == '1',  #: smtp use tls
 )
 
 for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
@@ -74,7 +75,7 @@ for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
 
 ### 2- Email preparers (preparer.py)
 ```python
-from concrete_mailer.utils.preparers import prepare_email
+from concrete_mailer.preparers import prepare_email
 import os
 
 #:  Define the smtp connexion variables in:
@@ -97,6 +98,7 @@ for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
         email_port=os.getenv('SMTP_HOST_PORT'),  #: smtp host port
         email_host_user=os.getenv('SMTP_HOST_USER'),  #: smtp host username
         email_host_password=os.getenv('SMTP_HOST_PASSWORD'),  #: smtp host password
+        use_tls=os.getenv('SMTP_USE_TLS') == '1',  #: smtp use tls
     )
     email.send()
 ```
@@ -108,8 +110,29 @@ for name, email in (('John', 'john@mail.ext'), ('Jane', 'jane@mail.ext')):
 
 ### Debug
 
-An additionnal `debug` kwargs (`False` by default) can be added with the following behaviour:
+Python standard package includes a `smtpd` module.
 
--  if `debug` is `False` (*default*), then the client will try to establish an smtp connection and send the email with the given options.
--  if `debug` is `True`, the email body will be displayed in console instead of being sent to destinations. No stmp connection will be established (dry-run)
+According to the [official documentation](https://docs.python.org/3/library/smtpd.html)
 
+> This module offers several classes to implement SMTP (email) servers.
+
+One of thoses classes is `DebuggingServer`.
+
+> Create a new debugging server. Arguments are as per SMTPServer. Messages will be discarded, and printed on stdout.
+
+If you want to test your emails, open a new console and invoke the following command:
+
+```bash
+python3 -m smtpd -n -c DebuggingServer localhost:1025
+```
+
+and configure your environment :
+
+```bash
+SMTP_HOST_NAME='localhost'
+SMTP_HOST_PORT='1025'
+SMTP_HOST_USER=''
+SMTP_HOST_PASSWORD=''
+SMTP_USE_TLS=''
+```
+The email body will be displayed in console instead of being sent to destinations. Only local stmp connection will be established (dry-run)

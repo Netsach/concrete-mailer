@@ -46,6 +46,29 @@ class TestEmailClient(TestCase):
         )
         self.assertTrue(email_sent)
 
+    def test_failure_smtp_connection_send_mail(self):
+        patch(
+            'concrete_mailer.preparers.get_connection',
+            side_effect=SMTPException,
+        ).start()
+        client = EmailSenderClient()
+
+        context = {'name': 'John Doe'}
+        html = '<h1>Hello {{name}}</h1><p>Welcome to Concrete Mailer</p>'
+        title = 'Hello Email'
+        sender = 'test@netsach.org'
+        recipients = ['email1.netsach.org', 'email2.netsach.org']
+
+        email_sent = client.send(
+            context,
+            html,
+            title,
+            dests=recipients,
+            sender_name='Netsach',
+            sender_email=sender,
+        )
+        self.assertFalse(email_sent)
+
     def test_failure_send_mail(self):
         patch(
             'concrete_mailer.client.get_connection',

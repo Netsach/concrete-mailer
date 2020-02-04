@@ -1,34 +1,15 @@
 # coding: utf-8
-import smtplib
-import sys
+from smtplib import SMTP
 
 
-def get_connection(host, port, sender_email, sender_password):
-    s = smtplib.SMTP(host=host, port=port)
-    s.starttls()
-    s.login(sender_email, sender_password)
-    return s
-
-
-class EmailToConsole:
-    def __init__(self, email, message, attachments=[], *args, **kwargs):
-        self.email = email
-        self.message = message
-        self.attachments = attachments
-
-    def send(self):
-        sys.stdout.write("=" * 90)
-        sys.stdout.write("\n")
-        for key, value in self.email.items():
-            sys.stdout.write('{key}: {value}\n'.format(key=key, value=value))
-        sys.stdout.write("\n" * 3)
-        if self.email.get('Subject'):
-            sys.stdout.write("[{}]\n".format(self.email.get('Subject')))
-            sys.stdout.write("\n")
-        sys.stdout.write("{}\n".format(self.message))
-        sys.stdout.write("=" * 90)
-        sys.stdout.write("\n")
-        return True
+def get_connection(host, port, user, password, use_tls=True):
+    connection = SMTP(host=host, port=port)
+    if use_tls:
+        connection.starttls()
+    # Ensure the SMTP server support the auth extension?
+    if connection.has_extn('auth'):
+        connection.login(user, password)
+    return connection
 
 
 class EmailToSend:
@@ -40,7 +21,7 @@ class EmailToSend:
         if self.connection is None:
             return False
         self.connection.sendmail(
-            from_addr=self.connection.user,
+            from_addr=self.email['From'],
             to_addrs=self.email['To'],
             msg=self.email.as_string(),
         )
