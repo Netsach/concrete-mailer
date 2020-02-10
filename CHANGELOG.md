@@ -4,7 +4,7 @@
 
 ### Added
 
-- nothing added
+- exclude tests directory when packaging `concrete-mailer`
 
 ### Changed
 
