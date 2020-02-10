@@ -4,7 +4,7 @@
 
 ### Added
 
-- exclude tests directory when packaging `concrete-mailer`
+- nothing added
 
 ### Changed
 
@@ -13,6 +13,12 @@
 ### Removed
 
 - nothing removed
+
+## [2.16.0]
+
+### Added
+
+- exclude tests directory when packaging `concrete-mailer`
 
 ## [2.15.0]
 
