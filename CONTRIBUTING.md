@@ -83,13 +83,18 @@ bandit concrete_mailer -r --exclude tests
 
 - change version within `concrete_mailer/__init__.py` file.
 - Update CHANGELOG.md to fix version
+- check version
+    - ``VERSION=`python -c "import concrete_mailer; print(concrete_mailer.__version__)"` ``
+    - `echo $VERSION`
 - commit yout changes
-    - `git commit -am 'Release version M.m.0'`
+    - `git commit -am 'Release version '$VERSION`
 - tag the new version
-    - `git tag -a M.m.0 -m 'M.m.0'`
+    - `git tag -a $VERSION -m $VERSION`
 - install setuptools and whell
     - `pip install -U setuptools wheel twine`
 - create dist
     - `python3 setup.py sdist bdist_wheel`
 - upload new version
     - `python3 -m twine upload dist/*`
+- push the new tag
+    - `git push --follow-tags`
