@@ -16,6 +16,12 @@
 
 ## [2.16.0]
 
+### Removed
+
+- exclude tests directory from wheels
+
+## [2.16.0]
+
 ### Added
 
 - exclude tests directory when packaging `concrete-mailer`

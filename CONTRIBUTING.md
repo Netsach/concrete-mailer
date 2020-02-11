@@ -93,7 +93,8 @@ bandit concrete_mailer -r --exclude tests
 - install setuptools and whell
     - `pip install -U setuptools wheel twine`
 - create dist
-    - `python3 setup.py sdist bdist_wheel`
+    - `python3 setup.py sdist`
+    - `pip wheel --no-index --no-deps --wheel-dir dist dist/concrete-mailer-$VERSION.tar.gz`
 - upload new version
     - `python3 -m twine upload dist/*`
 - push the new tag
