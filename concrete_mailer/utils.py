@@ -1,14 +1,17 @@
 # coding: utf-8
-from smtplib import SMTP
+from smtplib import SMTP, SMTPNotSupportedError
 
 
 def get_connection(host, port, user, password, use_tls=True):
     connection = SMTP(host=host, port=port)
     if use_tls:
         connection.starttls()
-    # Ensure the SMTP server support the auth extension?
-    if connection.has_extn('auth'):
+    #:  Some SMTP servers does not support authentication.
+    #:  If login raises SMTPNotSupportedError do not block the connection.
+    try:
         connection.login(user, password)
+    except SMTPNotSupportedError:
+        pass
     return connection
 
 

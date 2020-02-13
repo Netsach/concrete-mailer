@@ -8,7 +8,7 @@
 
 ### Changed
 
-- nothing changed
+- always try to login to SMTP server without checking if server accepts authentication. If an error is raised just pass and do not block connection.
 
 ### Removed
 
