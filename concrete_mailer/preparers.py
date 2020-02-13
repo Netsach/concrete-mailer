@@ -90,7 +90,7 @@ def _process_html_to_embed_image_in_email_header(
             if resp.status_code != 200:
                 logger.info(
                     'Fail to open url {}: {}, continue...'.format(
-                        path, resp.content
+                        path, resp.status_code
                     ),
                     exc_info=True,
                 )
