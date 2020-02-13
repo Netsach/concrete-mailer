@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 
-VERSION = (2, 16, 1)
+VERSION = (2, 17, 0)
 
 
 def get_version(version=VERSION):

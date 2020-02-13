@@ -8,11 +8,17 @@
 
 ### Changed
 
-- always try to login to SMTP server without checking if server accepts authentication. If an error is raised just pass and do not block connection.
+- nothing changed
 
 ### Removed
 
 - nothing removed
+
+## [2.17.0]
+
+### Changed
+
+- always try to login to SMTP server without checking if server accepts authentication. If an error is raised just pass and do not block connection.
 
 ## [2.16.0]
 
