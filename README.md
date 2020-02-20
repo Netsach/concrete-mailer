@@ -6,7 +6,7 @@
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Netsach/concrete-mailer/Check%20Black?label=black)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Netsach/concrete-mailer/Lint?label=lint)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Netsach/concrete-mailer/Tests?label=tests)
-![Codecov](https://img.shields.io/codecov/c/github/Netsach/concrete-mailer?logo=coedcov)
+![Codecov](https://img.shields.io/codecov/c/github/Netsach/concrete-mailer?logo=codecov)
 ![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)
 ![Python](https://img.shields.io/badge/python-2.7-3473A7?logo=python&logoColor=FED646)
 ![Python](https://img.shields.io/badge/python-3.6-3473A7?logo=python&logoColor=FED646)
