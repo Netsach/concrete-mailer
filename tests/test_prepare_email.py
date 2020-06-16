@@ -21,9 +21,24 @@ class TestSendEmail(TestCase):
     def tearDown(self):
         patch.stopall()
 
-    def test_success_send_mail(self):
+    def test_success_send_mail_with_string(self):
         context = {'name': 'John Doe'}
         html = '<h1>Hello {{name}}</h1><p>Welcome to Concrete Mailer</p>'
+        title = 'Hello Email'
+        sender = 'test@netsach.org'
+        recipients = ['email1.netsach.org', 'email2.netsach.org']
+        reply_to = 'support@netsach.org'
+        patch(
+            'concrete_mailer.preparers.get_connection', new=FakeSmtpConnection
+        ).start()
+        email = prepare_email(
+            context, '', html, title, sender, recipients, reply_to
+        )
+        self.assertTrue(email.send())
+
+    def test_success_send_mail_with_bytes(self):
+        context = {'name': 'John Doe'}
+        html = b'<h1>Hello {{name}}</h1><p>Welcome to Concrete Mailer</p>'
         title = 'Hello Email'
         sender = 'test@netsach.org'
         recipients = ['email1.netsach.org', 'email2.netsach.org']

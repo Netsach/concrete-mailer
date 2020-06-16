@@ -4,7 +4,7 @@
 
 ### Added
 
-- nothing added
+- When preparing the email, ensure that the body is a string
 
 ### Changed
 
