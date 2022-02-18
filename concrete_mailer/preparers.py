@@ -155,7 +155,7 @@ def prepare_email(
     )
 
     # Prepare mails
-    email = MIMEMultipart()
+    email = MIMEMultipart('alternative')
     email['From'] = sender
     email['To'] = ", ".join(recipients)
     email['Subject'] = title
