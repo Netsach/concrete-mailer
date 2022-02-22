@@ -150,6 +150,9 @@ def prepare_email(
             logger.info('Failed to establish connection: {}'.format(e))
             raise
 
+    #:  Ensure html is a string
+    html = unicode_type(html)
+
     message = prepare_email_body(
         context=context, css=css, template=html, title=title
     )
