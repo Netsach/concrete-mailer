@@ -8,7 +8,7 @@
 
 ### Changed
 
-- nothing changed
+- fix mime type when attachments
 
 ### Removed
 
