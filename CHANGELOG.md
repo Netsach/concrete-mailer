@@ -8,11 +8,17 @@
 
 ### Changed
 
-- fix mime type when attachments
+- nothing changed
 
 ### Removed
 
 - nothing removed
+
+## [2.19.1] - 2024-04-02
+
+### Changed
+
+- fix mime type when attachments
 
 ## [2.19.0] - 2024-04-02
 
